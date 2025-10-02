@@ -1,7 +1,7 @@
 // En esta parte se coloca el comentario para explicar lo que realiza la seccion, para este caso es "package"
 // Otra linea que explique
 
-package main
+package Comentarios
 
 import (
 // "fmt"
@@ -17,7 +17,7 @@ const (
 	indice3
 )
 
-func main() {
+func Comentario() {
 	// Comentario en linea
 
 	//fmt.Println("Dominio de ED Team ", Domain)

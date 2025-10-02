@@ -1,10 +1,10 @@
-package main
+package OperadorLogicos
 
 import (
 	"fmt"
 )
 
-func main() {
+func OperadoresLogicos() {
 
 	// Compara dos valores y retorna un boolean
 	// <, >, ==, != >= <=

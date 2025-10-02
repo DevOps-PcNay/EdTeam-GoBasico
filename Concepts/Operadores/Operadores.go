@@ -1,10 +1,10 @@
-package main
+package Operadores
 
 import (
 	"fmt"
 )
 
-func main() {
+func Operadores_arit() {
 	var a = 2 + 3
 	var b, c, d, e uint
 

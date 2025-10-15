@@ -8,6 +8,8 @@ import (
 
 const (
 	// File Type
+
+	// Archivos que no esten definidos en las constantes "File extenson"
 	fileRegular int = iota
 	fileDirectory
 	fileExecutble
@@ -76,7 +78,8 @@ func fig_emoji(opcion int) string {
 }
 
 var mapStyleByFileType = map[int]styleFileType{
-	//fileRegular:   {icon: Emoji(1)},
+	//fileRegular:  styleFileType{icon: Emoji(1)},
+	// No es necesario especificar el tipo de dato, es redundante.
 	fileRegular:   {icon: fig_emoji(1)},
 	fileDirectory: {icon: fig_emoji(2), color: "BLUE", symbol: "/"},
 	fileExecutble: {icon: fig_emoji(3), color: "GREEN", symbol: "*"},

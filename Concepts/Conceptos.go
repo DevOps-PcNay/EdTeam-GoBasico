@@ -6,7 +6,11 @@ import (
 	//"github.com/DevOps-PcNay/EdTeam-GoBasico/Concepts/Comentarios"
 	//"github.com/DevOps-PcNay/EdTeam-GoBasico/Concepts/Operadores"
 	//"github.com/DevOps-PcNay/EdTeam-GoBasico/Concepts/OperadorLogicos"
-	"github.com/DevOps-PcNay/EdTeam-GoBasico/Concepts/Punteros"
+	//"github.com/DevOps-PcNay/EdTeam-GoBasico/Concepts/Punteros"
+	//"github.com/DevOps-PcNay/EdTeam-GoBasico/Concepts/Arrays"
+	//"github.com/DevOps-PcNay/EdTeam-GoBasico/Concepts/Slices"
+	//"github.com/DevOps-PcNay/EdTeam-GoBasico/Concepts/Maps"
+	"github.com/DevOps-PcNay/EdTeam-GoBasico/Concepts/Estructuras"
 )
 
 func main() {
@@ -16,5 +20,10 @@ func main() {
 	//Comentarios.Comentario()
 	// Operadores.Operadores_arit()
 	//OperadorLogicos.OperadoresLogicos()
-	Punteros.Puntero()
+	//Punteros.Puntero()
+	//Arrays.Arreglos()
+	//Slices.Slice()
+	//Maps.Estructura_Maps()
+	Estructuras.TipoDatoEstructura()
+
 }

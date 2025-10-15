@@ -1,10 +1,10 @@
-package main
+package Estructuras
 
 import (
 	"fmt"
 )
 
-// Estas estructuras las declaran a nivel de paquetes.
+// Estas estructuras las declaran a nivel de paquetes. Para que esten disponibles en otros paquetes o funciones.
 
 type Person struct {
 	Name        string
@@ -12,7 +12,7 @@ type Person struct {
 	HasChildren bool
 }
 
-func main() {
+func TipoDatoEstructura() {
 
 	// Es mejor definirlo de esta manera, ya que cuando son demasiados se pierde.
 	// Ademas se puede definir los campos que se desean.
@@ -22,6 +22,7 @@ func main() {
 		HasChildren: false,
 	}
 
+	//%+v = Para que imprima la estructura.
 	fmt.Printf("%+v \n", Juan)
 
 	// Definiendo otra instancia :
@@ -29,7 +30,7 @@ func main() {
 
 	fmt.Printf("%+v \n", Beto)
 
-	// Definiendo un solo campo
+	// Definiendo un solo campo. Se recomienda definir el nombre del campo, para asegurar que se esta asignando.
 
 	Paco := Person{Age: 30}
 	fmt.Printf("%+v \n", Paco)

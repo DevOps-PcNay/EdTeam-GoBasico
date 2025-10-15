@@ -1,14 +1,15 @@
-package main
+package Slices
 
 import (
 	"fmt"
 )
 
-func main() {
+func Slice() {
+
 	// Slice = Son apuntadores a un Array, no posee datos.
 	things := [7]string{"Carros", "Carros2", "Carros3", "Computadora", "Reloj", "Raton", "Monitor"}
 
-	//Slice
+	//Slice, indice 0 al 2
 	cars := things[0:2]
 
 	fmt.Println("Things :", things)
@@ -27,7 +28,15 @@ func main() {
 
 	fmt.Println("Modificando el valor del Slice Cars , modificando Carro3 a ", cars)
 
-	// cuando se cambia un valor en el Slide se cambia en el Arraglo, por esta razon son Punteros para el Array.
+	// Se altera el arreglo principal (things), aun cuando se haya modificado en un slices, por esta razon los slices hacen referenia a la direccion de memoria.
+	ultimo_3 := things[4:]
+	fmt.Println("Imprimiendo los ultimos 3 elementos del arrelgo ", ultimo_3)
+
+	primeros_3 := things[:3]
+	fmt.Println("Imprimiendo los primeross 3 elementos del arrelgo ", primeros_3)
+
+	todo := things[:]
+	fmt.Println("Impirmiendo todo el arreglo\n ", todo)
 
 	// Tamano y Capacidad.
 	// len() = Numero de elementos en el Slice
@@ -38,16 +47,33 @@ func main() {
 	fmt.Println("animals : ", animal)
 	fmt.Println("Pets : ", pets)
 
+	// Tamano = Numero de elementos que contiene el Slice.
 	fmt.Println("Tamano de Pets ", len(pets))
 
-	// La cpacidad dede donde inicia el Slice, en este caso es 1 al 4
+	// La capacidad = Es el numero de elementos del array origen apartir del indice que nosotros especificamos para crear nuestro slice
+	// En este caso es 4 elementos (iniciando de "Gato" terminando en "Camello")
 	fmt.Println("Capacidad de Pets ", cap(pets))
 
-	// Agregando un elemento al slice, tener encuenta que afecta al Array
+	// Con los "Slices" se puede agregar elmentos al arreglo de forma dinamica, esto se hace atraves de una funcion preconstruida llamada "append()"
+
 	pets = append(pets, "Jirafa")
 	fmt.Println("Imprimiendo un Slices con un elemento agregado ", pets)
 
+	// Pero se modifica el array principal "animal" se debe tener encuenta
+	fmt.Println("Imprimiendo el Slice principal -animal- ", animal)
+
+	// Ahora se rebasara la capacidad del slice "pets" que sucedera ?
+	pets = append(pets, "Cocodrilo", "Gasela", "Tigre")
+	fmt.Println("Imprimiendo el Slice pets", pets)
+
+	// Go land de forma automatica duplica la caapcidad el forma doble de la capaciad actual.
+	fmt.Println("Capacidad de Pets ", cap(pets))
+	fmt.Println("Imprimiendo el Slice principal -animal- ", animal)
+
+	// Lo que hace Go Land es que como ya no se puede agregar mas elementos al arreglo "pets"[Slices], crea uno nuevo "pets" y le agrega los elementos nuevos, ademas ya no modifica el arreglo original "animal" y por tanto el slice "pets" ya no hace referencia al arreglo "animal"
+
 	// Creando un Slices sin tomar la referencia un Array.
+	// No se especifica el tamano.
 	pets2 := []string{"Perro", "Gato"}
 
 	fmt.Println("Slices pets2 ", pets2)
@@ -63,7 +89,7 @@ func main() {
 	fmt.Println("Tamano de Pets3 ", len(pets3))
 	fmt.Println("Capacidad de Pets3 ", cap(pets3))
 
-	// En el caso de que se rebase la capacidad, duplicara la capacidad
+	// En el caso de que se rebase la capacidad, duplicara la capacidad, para este caso de 3 a 6.
 	pets3 = append(pets3, "Jirafa2")
 	fmt.Println("Slices pets3 ", pets3)
 	fmt.Println("Tamano de Pets3 ", len(pets3))
